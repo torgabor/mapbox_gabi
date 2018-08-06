@@ -18,9 +18,8 @@ class App extends Component {
               <li>Location3</li>
             </ol>
           </aside>
-          <section className="map-container">
-            <Map />
-          </section>
+
+          <Map />
         </main>
       </div>
     );
