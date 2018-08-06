@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 
+import ReactDOM from 'react-dom';
+import mapboxgl from 'mapbox-gl';
+
 import './App.css';
 
-
 class Map extends Component {
+  componentDidMount() {
+    this.map = new mapboxgl.Map({
+      container: this.mapContainer,
+      style: 'mapbox://styles/mapbox/streets-v10'
+    });
+  }
+
   render() {
-    return (
-      <section className="map-container">
-        <h2 className="hidden">Neighbourhood Map</h2>
-        <div id="map" role="application" aria-label="map area"></div>
-      </section>
-    )
+    const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+
+    mapboxgl.accessToken =
+      'pk.eyJ1IjoiZ2FicmllbGxhaHUiLCJhIjoiY2praXNlaWkwMDRtazNsa2ZzdmRyZTViayJ9.vk8q9Nba8t3wx0xP1rml0g';
+
+    return <div className="map" ref={el => (this.mapContainer = el)} />;
   }
 }
 
-export default Map
+export default Map;
