@@ -7,11 +7,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="header">
           <h1 className="App-title">Neighbourhood Map</h1>
         </header>
-
-        <Map />
+        <main className="main">
+          <aside className="location-sidebar">
+            <ol>
+              <li>Location1</li>
+              <li>Location2</li>
+              <li>Location3</li>
+            </ol>
+          </aside>
+          <section className="map-container">
+            <Map />
+          </section>
+        </main>
       </div>
     );
   }

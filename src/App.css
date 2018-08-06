@@ -1,15 +1,40 @@
-.App-header {
+.header {
   background-color: #222;
-  height: 150px;
   padding: 20px;
-  color: white;
+  color: #fff;
+  text-align: center;
 }
 
 .App-title {
   font-size: 1.5em;
 }
 
-.map {
-  width: 100vw;
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   height: 100vw;
+  justify-content: flex-end;
+}
+
+.location-sidebar {
+  background-color: #222;
+  color: #fff;
+  flex-basis: 20%;
+  height: 100%;
+  justify-content: center;
+}
+
+.location-sidebar ol li {
+  padding: 40px 20px;
+}
+
+.map-container {
+  flex-basis: 80%;
+  height: 100%;
+}
+
+#map {
+  width: inherit;
+  height: inherit;
 }

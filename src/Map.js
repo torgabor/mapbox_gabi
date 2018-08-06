@@ -9,8 +9,12 @@ class Map extends Component {
   componentDidMount() {
     this.map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mapbox/streets-v10',
+      center: [19.042592, 47.498138], // starting position
+      zoom: 14 // starting zoom
     });
+
+    this.map.addControl(new mapboxgl.NavigationControl());
   }
 
   render() {
@@ -19,7 +23,7 @@ class Map extends Component {
     mapboxgl.accessToken =
       'pk.eyJ1IjoiZ2FicmllbGxhaHUiLCJhIjoiY2praXNlaWkwMDRtazNsa2ZzdmRyZTViayJ9.vk8q9Nba8t3wx0xP1rml0g';
 
-    return <div className="map" ref={el => (this.mapContainer = el)} />;
+    return <div id="map" ref={el => (this.mapContainer = el)} />;
   }
 }
 
