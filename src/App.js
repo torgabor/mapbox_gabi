@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import Map from './Map';
+import Map from './MapBox';
+import Sidebar from './Sidebar';
 import './App.css';
 
 class App extends Component {
@@ -11,14 +12,7 @@ class App extends Component {
           <h1 className="App-title">Neighbourhood Map</h1>
         </header>
         <main className="main">
-          <aside className="location-sidebar">
-            <ol>
-              <li>Location1</li>
-              <li>Location2</li>
-              <li>Location3</li>
-            </ol>
-          </aside>
-
+          <Sidebar />
           <Map />
         </main>
       </div>
