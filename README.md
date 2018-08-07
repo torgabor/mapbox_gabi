@@ -1,3 +1,68 @@
+# Neighbourhood Map App
+
+!**Note that this project is currently in progress**!
+
+The goal of the project is the following:
+"A small React application that diplays a map with several markers and a sidebar with the list of locations.
+The markers can be clicked to open up an additional infowindow, and look distinct from the other markers, when active.
+Locations and markers can be filtered by the searchbar synchronously.
+A third-party API (such as Foursquare or Flickr) is implemented.
+Functionalities run error-free.
+The application is fully responsive and accessible.
+The app uses React's own ServiceWorker.
+
+
+## Getting Started
+
+   These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+   **Pre-requisites**: Install [git](https://gitforwindows.org/), [node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) on your computer.
+
+   1. Get a local copy of this repo by typing: `<git clone https://github.com/GabriellaHU/neighbourhood-map.git>` to the terminal. (Or download the zip file and unzip it.)
+   2. Enter the project folder in your terminal and run <`npm start`>
+   3. Navigate to `localhost:3000` in your browser to explore the app. Review the files in your preferred code editor.
+   4. If you wish to use my code, please, [create your own MapBox API key](https://www.mapbox.com/signup/?route-to=%22/account/%22), and replace the current one in the MapBox.js file.
+
+
+## Built With
+
+   * HTML5
+   * CSS
+   * JS6
+   * [React](https://reactjs.org/)
+   * [Create React App](https://github.com/facebookincubator/create-react-app)
+   * [MapBox GL JS](https://www.mapbox.com/mapbox-gl-js/api/)
+   * [Prettier](https://prettier.io/) (a code formatting plugin for Atom)
+
+
+## Structure
+
+
+```bash
+├── README.md - This file.
+├── package.json # npm package manager file.
+├── public
+│   ├── favicon.ico
+│   └── index.html
+└── src
+    ├── App.css
+    ├── App.js # This is the root of the app.
+    ├── Mapbox.js # This component contains the MapBox map
+    ├── Sidebar.js # This component contains the list of locations.
+    ├── App.test.js # Used for testing. Provided with Create React App.
+    ├── index.css # Global styles.
+    └── index.js # It is used for DOM rendering only.
+```
+
+## Contributing
+The purpose of this project was educational, thus pull requests will likely not be excepted.
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -300,7 +365,7 @@ In the WebStorm menu `Run` select `Edit Configurations...`. Then click `+` and s
 
 Start your app by running `npm start`, then press `^D` on macOS or `F9` on Windows and Linux or click the green debug icon to start debugging in WebStorm.
 
-The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine. 
+The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine.
 
 ## Formatting Code Automatically
 
@@ -1989,7 +2054,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 
@@ -2429,7 +2494,7 @@ To resolve this:
 1. Open an issue on the dependency's issue tracker and ask that the package be published pre-compiled.
   * Note: Create React App can consume both CommonJS and ES modules. For Node.js compatibility, it is recommended that the main entry point is CommonJS. However, they can optionally provide an ES module entry point with the `module` field in `package.json`. Note that **even if a library provides an ES Modules version, it should still precompile other ES6 features to ES5 if it intends to support older browsers**.
 
-2. Fork the package and publish a corrected version yourself. 
+2. Fork the package and publish a corrected version yourself.
 
 3. If the dependency is small enough, copy it to your `src/` folder and treat it as application code.
 
