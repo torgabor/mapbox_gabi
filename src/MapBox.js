@@ -72,29 +72,8 @@ class Map extends Component {
   accessToken: 'pk.eyJ1IjoiZ2FicmllbGxhaHUiLCJhIjoiY2praXNlaWkwMDRtazNsa2ZzdmRyZTViayJ9.vk8q9Nba8t3wx0xP1rml0g'
 });
 
-  //
-  // componentDidMount() {
-  //   this.map = new mapboxgl.Map({
-  //     container: this.mapContainer, //The HTML element in which Mapbox GL JS will render the map
-  //     center: [19.013, 47.49], // starting position
-  //     zoom: 13.5 // starting zoom,
-  //   });
-
     this.map.addControl(new mapboxgl.NavigationControl());
 
-    // const lng0 = this.state.locations[0].lng;
-    // const lat0 = this.state.locations[0].lat;
-    // const lng1 = this.state.locations[1].lng;
-    // const lat1 = this.state.locations[1].lat;
-    // const lng2 = this.state.locations[2].lng;
-    // const lat2 = this.state.locations[2].lat;
-    // const lng3 = this.state.locations[3].lng;
-    // const lat3 = this.state.locations[3].lat;
-    // const lng4 = this.state.locations[4].lng;
-    // const lat4 = this.state.locations[4].lat;
-    // const { lng0, lat0 } = this.state.locations[0].coordinates;
-    // const { lng1, lat1 } = this.state.locations[1].coordinates;
-    // const { lng2, lat2 } = this.state.locations[2].coordinates
 
     // const marker0 = new mapboxgl.Marker()
     //   .setLngLat([lng0, lat0])
@@ -159,31 +138,3 @@ class Map extends Component {
     //   .addTo(this.map);
 
   // }
-
-
-
-  render() {
-
-    return (
-
-      <section className="map-container">
-      <Map
-style="mapbox://styles/mapbox/streets-v10"
-containerStyle={{
-  height: "100vh",
-  width: "100vw"
-}}>
-  <Layer
-    type="symbol"
-    id="marker"
-    layout={{ "icon-image": "marker-15" }}>
-    <Feature coordinates={[19, 47]}/>
-  </Layer>
-</Map>
-      </section>
-    )
-
-  }
-}
-
-export default Map;
