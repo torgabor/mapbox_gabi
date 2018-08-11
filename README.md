@@ -32,6 +32,7 @@ The app uses React's own ServiceWorker.
    * [React](https://reactjs.org/)
    * [Create React App](https://github.com/facebookincubator/create-react-app)
    * [MapBox GL JS](https://www.mapbox.com/mapbox-gl-js/api/)
+   * [React Mapbox GL](https://github.com/alex3165/react-mapbox-gl)
    * [Prettier](https://prettier.io/) (a code formatting plugin for Atom)
 
 

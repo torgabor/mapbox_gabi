@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Map from './MapBox';
 import Sidebar from './Sidebar';
+import MapBox from './ReactMapBox';
 import './App.css';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
         </header>
         <main className="main">
           <Sidebar />
-          <Map />
+          <MapBox />
         </main>
       </div>
     );
