@@ -12,14 +12,13 @@ class MBMarker extends Component {
       coordinates={this.props.coordinates}
       className="marker"
       anchor="bottom">
-      <img src={"https://image.flaticon.com/icons/svg/33/33622.svg"}/>
+        <img src={"https://image.flaticon.com/icons/svg/33/33622.svg"}/>
     </Marker>
 
   );
 
   }
 }
-
 
 
 export default MBMarker

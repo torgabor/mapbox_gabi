@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // React wrapper for mapbox-gl-js
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 // import { Marker } from "react-mapbox-gl";
-import { Popup } from "react-mapbox-gl";
+import MBPopup from './Popup';
 import MBMarker from './Marker';
 
 import './App.css';
@@ -38,23 +38,20 @@ class MapBox extends Component {
             [18.934, 47.513][(19.102, 47.469)]
           } /*the map will center on the given coordinates*/
         >
-        {locations.map((marker) =>
-          <MBMarker
-             coordinates={marker}>
-          </MBMarker>
+        {locations.map((location, index) =>
+          <div className='marker-wrapper'>
+            <MBMarker
+               key={`marker${index}`}
+               coordinates={location.lngLat}>
+            </MBMarker>
+            <MBPopup
+               key={`popup${index}`}
+               locations={location}>
+            </MBPopup>
+          </div>
         )}
         /*<MBMarker key='01' coordinates={[19.026, 47.508]}></MBMarker>
         <MBMarker key='02' coordinates={[19.025, 47.499]}></MBMarker>*/
-        <Popup
-          coordinates={[19.026, 47.508]}
-          offset={{
-            "bottom-left": [12, -38],
-            "bottom": [0, -38],
-            "bottom-right": [-12, -38]
-          }}
-          >
-          <h1>Popup</h1>
-        </Popup>;
         </Map>
       </section>
     );
