@@ -44,6 +44,7 @@ body {
 
 .sidebar ol li {
   padding: 40px 20px;
+  cursor: pointer;
 }
 
 .map-container {
@@ -54,7 +55,7 @@ body {
 #map {
 }
 
-.marker img {
+.marker {
   cursor: pointer;
   width: 35px;
 }

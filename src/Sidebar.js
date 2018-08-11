@@ -3,13 +3,32 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Sidebar extends Component {
+
+  state = {
+    listColor: 'white'
+  };
+
+
+  handleChange = event => {
+    this.setState({listColor: 'red'})
+  };
+
+
   render() {
+    const { locations } = this.props;
+
     return (
       <aside className="sidebar">
         <ol>
-          <li>Location1</li>
-          <li>Location2</li>
-          <li>Location3</li>
+          {locations.map((location, index) => (
+            <li
+              key={`option${index}`}
+              id={`option${index}`}
+              onChange={this.handleChange}
+            >
+              {`${location.place}`}
+            </li>
+          ))}
         </ol>
       </aside>
     );

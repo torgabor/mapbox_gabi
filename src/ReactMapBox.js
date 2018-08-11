@@ -13,14 +13,9 @@ const Map = ReactMapboxGl({
     'pk.eyJ1IjoiZ2FicmllbGxhaHUiLCJhIjoiY2praXNlaWkwMDRtazNsa2ZzdmRyZTViayJ9.vk8q9Nba8t3wx0xP1rml0g'
 });
 
-
 class MapBox extends Component {
-
-
-
   render() {
-
-      const { locations } = this.props;
+    const { locations } = this.props;
 
     return (
       <section className="map-container">
@@ -38,18 +33,12 @@ class MapBox extends Component {
             [18.934, 47.513][(19.102, 47.469)]
           } /*the map will center on the given coordinates*/
         >
-        {locations.map((location, index) =>
-          <div className='marker-wrapper'>
-            <MBMarker
-               key={`marker${index}`}
-               coordinates={location.lngLat}>
-            </MBMarker>
-            <MBPopup
-               key={`popup${index}`}
-               locations={location}>
-            </MBPopup>
-          </div>
-        )}
+          {locations.map((location, index) => (
+            <div className="marker-wrapper" id={`${index}`}>
+              <MBMarker key={`marker${index}`} coordinates={location.lngLat} />
+              <MBPopup key={`popup${index}`} locations={location} />
+            </div>
+          ))}
         </Map>
       </section>
     );

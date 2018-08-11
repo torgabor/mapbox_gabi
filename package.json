@@ -5,10 +5,10 @@
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.1.0-11",
     "@fortawesome/free-regular-svg-icons": "^5.1.0-11",
+    "animate.css": "^3.7.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.0",
     "mapbox-gl": "^0.47.0",
-    "prettier": "^1.14.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-mapbox-gl": "^3.8.0",
