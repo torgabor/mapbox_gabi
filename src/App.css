@@ -56,10 +56,5 @@ body {
 
 .marker img {
   cursor: pointer;
-  width: 50px;
+  width: 35px;
 }
-
-/* .mapboxgl-popup {
-  max-width: 400px;
-  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-} */

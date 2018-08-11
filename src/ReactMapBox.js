@@ -50,8 +50,6 @@ class MapBox extends Component {
             </MBPopup>
           </div>
         )}
-        /*<MBMarker key='01' coordinates={[19.026, 47.508]}></MBMarker>
-        <MBMarker key='02' coordinates={[19.025, 47.499]}></MBMarker>*/
         </Map>
       </section>
     );

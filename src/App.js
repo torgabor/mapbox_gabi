@@ -26,7 +26,7 @@ class App extends Component {
      },
      {
        place:'Mammut Shopping Centre',
-       address: 'Budapest',
+       address: '2-6 Lövőház Street, Budapest, 1024',
        lngLat: [19.028, 47.515]
      },
      {

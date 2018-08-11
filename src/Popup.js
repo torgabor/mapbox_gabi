@@ -8,6 +8,7 @@ class MBPopup extends Component {
 
     return(
       <Popup
+        style={{display: 'none'}}
         coordinates={this.props.locations.lngLat}
         offset={{
           "bottom-left": [12, -38],
@@ -16,6 +17,7 @@ class MBPopup extends Component {
         }}
         >
         <h1>{this.props.locations.place}</h1>
+        <p>{this.props.locations.address}</p>
       </Popup>
   );
 
