@@ -7,9 +7,9 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <header className="header">
-          <h1 className="App-title">Neighbourhood Map</h1>
+          <h1 className="app-title">Neighbourhood Map</h1>
         </header>
         <main className="main">
           <Sidebar />

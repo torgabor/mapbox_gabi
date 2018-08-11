@@ -5,7 +5,7 @@ import './App.css';
 class Sidebar extends Component {
   render() {
     return (
-      <aside className="location-sidebar">
+      <aside className="sidebar">
         <ol>
           <li>Location1</li>
           <li>Location2</li>

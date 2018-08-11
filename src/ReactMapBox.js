@@ -15,17 +15,24 @@ const Map = ReactMapboxGl({
 class MapBox extends Component {
   render() {
     return (
-      <Map
-        style="mapbox://styles/mapbox/streets-v9"
-        containerStyle={{
-          height: '100%',
-          width: '80%'
-        }}
-      >
-        <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-          <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
-        </Layer>
-      </Map>
+      <section className="map-container">
+        <Map
+          id="map"
+          style="mapbox://styles/mapbox/streets-v10"
+          containerStyle={{
+            height: '100%',
+            width: '100%'
+          }}
+        >
+          <Layer
+            type="symbol"
+            id="marker"
+            layout={{ 'icon-image': 'marker-15' }}
+          >
+            <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
+          </Layer>
+        </Map>
+      </section>
     );
   }
 }
