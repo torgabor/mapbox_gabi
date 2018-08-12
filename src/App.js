@@ -9,6 +9,7 @@ class App extends Component {
   // locations: an array of location objects, that is passed down to the Sidebar and MapBox Components
   // activeObj: the currently active location object
   state = {
+    filteredObj: [],
     locations: [
       {
         id: '0',
@@ -48,15 +49,19 @@ class App extends Component {
   handleClick = (e) => {
     const value =e.target.id
     this.setState({activeObj: value})
+    this.setState({filteredObj: []})
   }
 
   handleChange= (e) => {
     const value = e.target.value
     this.setState({activeObj: value})
+    const filteredObj = this.state.locations[value]
+    this.setState({filteredObj: filteredObj})
   }
 
   removePopup = () => {
     this.setState({activeObj: ''})
+    this.setState({filteredObj: []})
   }
 
   render() {
