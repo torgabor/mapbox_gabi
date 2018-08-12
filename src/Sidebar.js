@@ -21,15 +21,14 @@ class Sidebar extends Component {
     return (
       <aside className="sidebar">
         <ol>
-          {/* render all list items based on the locations state
-           index is also passed in, to give a unique key to each object*/}
-          {locations.map((location, index) => (
+          {/* render all list items based on the locations state*/}
+          {locations.map((location) => (
             <li
-              key={`option${index}`}
-              id={`option${index}`}
+              key={location.id}
+              id={location.id}
               onChange={this.handleChange}
             >
-              {`${location.place}`}
+              {location.place}
             </li>
           ))}
         </ol>

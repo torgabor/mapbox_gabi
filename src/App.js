@@ -11,33 +11,38 @@ class App extends Component {
   state = {
     locations: [
       {
+        id: 0,
         place: 'Déli Pályaudvar',
         address: 'Budapest',
         lngLat: [19.025, 47.499]
       },
       {
+        id: 1,
         place: 'Millenaris Park',
         address: 'Budapest',
         lngLat: [19.028, 47.511]
       },
       {
+        id: 2,
         place: 'MOM Park',
         address: 'Budapest',
         lngLat: [19.026, 47.508]
       },
       {
+        id: 3,
         place: 'Mammut Shopping Centre',
         address: '2-6 Lövőház Street, Budapest, 1024',
         lngLat: [19.028, 47.515]
       },
       {
+        id: 4,
         place: 'Moholy-Nagy University of Art and Design',
         address: 'Budapest',
         lngLat: [18.9898, 47.5171]
       }
     ],
 
-    activeObj: ''
+    activeObj: '0'
   };
 
   render() {
