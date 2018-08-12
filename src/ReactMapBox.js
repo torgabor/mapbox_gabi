@@ -33,6 +33,8 @@ class MapBox extends Component {
             [18.934, 47.513][(19.102, 47.469)]
           } /*the map will center on the given coordinates*/
         >
+        // RENDER ALL MARKERS AND POPUPS
+        // index is also passed in, to give a unique key to each object
           {locations.map((location, index) => (
             <div className="marker-wrapper" id={`${index}`}>
               <MBMarker key={`marker${index}`} coordinates={location.lngLat} />

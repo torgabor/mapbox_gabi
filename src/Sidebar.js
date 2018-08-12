@@ -4,11 +4,12 @@ import './App.css';
 
 class Sidebar extends Component {
 
+  //this state is temporary
   state = {
     listColor: 'white'
   };
 
-
+  //this method is temporary
   handleChange = event => {
     this.setState({listColor: 'red'})
   };
@@ -20,6 +21,8 @@ class Sidebar extends Component {
     return (
       <aside className="sidebar">
         <ol>
+          {/* render all list items based on the locations state
+           index is also passed in, to give a unique key to each object*/}
           {locations.map((location, index) => (
             <li
               key={`option${index}`}

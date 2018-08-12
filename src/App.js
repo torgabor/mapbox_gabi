@@ -5,6 +5,9 @@ import MapBox from './ReactMapBox';
 import './App.css';
 
 class App extends Component {
+
+  // locations: an array of location objects, that is passed down to the Sidebar and MapBox Components
+  // activeObj: the currently active location object
   state = {
     locations: [
       {
@@ -34,7 +37,7 @@ class App extends Component {
       }
     ],
 
-    activeObj: '0'
+    activeObj: ''
   };
 
   render() {

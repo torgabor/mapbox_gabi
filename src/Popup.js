@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import ReactMapboxGl, { Popup } from 'react-mapbox-gl';
 
 class MBPopup extends Component {
+
   render() {
+
     return (
       <Popup
         coordinates={this.props.locations.lngLat}
@@ -17,6 +19,7 @@ class MBPopup extends Component {
         <p>{this.props.locations.address}</p>
       </Popup>
     );
+
   }
 }
 

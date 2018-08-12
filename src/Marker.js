@@ -6,6 +6,9 @@ import markerImgActive from './images/map-marker-alt-solid-active.svg';
 
 
 class MBMarker extends Component {
+
+  //a temporary solution for managing the state of the active marker
+  //the source of the marker image is changing based on this state
   state = {
     markerColor: markerImg
   };
