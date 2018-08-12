@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ListElem from './ListElem'
+
 import './App.css';
 
 function Sidebar (props) {
@@ -9,12 +11,10 @@ function Sidebar (props) {
         <ol>
           {/* render all list items based on the locations state*/}
           {props.locations.map((location) => (
-            <li
-              key={location.id}
-              id={location.id}
-            >
-              {location.place}
-            </li>
+             <ListElem
+               locations={location}
+               handleChange={props.handleChange}
+              />
           ))}
         </ol>
       </aside>

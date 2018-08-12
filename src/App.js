@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Sidebar from './Sidebar';
+import Sidebar from './Sidebar_';
 import MapBox from './ReactMapBox';
 import './App.css';
 
@@ -50,6 +50,11 @@ class App extends Component {
     this.setState({activeObj: id})
   }
 
+  handleChange= (e) => {
+    const value = Number(e.target.value)
+    this.setState({activeObj: value})
+  }
+
   removePopup = () => {
     this.setState({activeObj: ''})
   }
@@ -64,7 +69,7 @@ class App extends Component {
           <Sidebar
             locations={this.state.locations}
             activeObj={this.state.activeObj}
-            handleClick={this.handleClick}
+            handleChange={this.handleChange}
             />
           <MapBox
             locations={this.state.locations}
