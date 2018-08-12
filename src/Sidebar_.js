@@ -13,7 +13,9 @@ function Sidebar (props) {
         onChange={props.handleChange}
         value={'selector'}
       >
+        <option value=''>Select a location</option>
         {props.locations.map((location) => (
+
           <option
             value={location.id}
             key={location.id}
