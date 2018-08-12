@@ -67,3 +67,7 @@ body {
 .active-li{
   background-color: #333;
 }
+
+.inactive-li{
+  background-color: #222;
+}

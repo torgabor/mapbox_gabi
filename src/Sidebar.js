@@ -43,6 +43,7 @@ class Sidebar extends Component {
            <ListElem
              key={location.id}
              handleClick={this.props.handleClick}
+             activeObj={this.props.activeObj}
              locations={location}
           />
          ))}
