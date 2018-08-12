@@ -70,6 +70,7 @@ class App extends Component {
             locations={this.state.locations}
             activeObj={this.state.activeObj}
             handleChange={this.handleChange}
+            handleClick={this.handleClick}
             />
           <MapBox
             locations={this.state.locations}

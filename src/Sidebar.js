@@ -6,20 +6,28 @@ import './App.css';
 
 
 
-function Sidebar (props) {
+class Sidebar extends Component {
+
+  render() {
+
+    const { locations } = this.props;
+    const { activeObj } = this.props
+
+    const inactive = locations.filter(obj => obj.id !== activeObj)
+    const active = locations.filter(obj => obj.id === activeObj)
 
   return (
 
     <aside className="sidebar">
 
       <select
-        onChange={props.handleChange}
+        onChange={this.props.handleChange}
         value={'selector'}
         label='location-selector'
 
       >
         <option value=''>Select a location</option>
-        {props.locations.map((location) => (
+        {this.props.locations.map((location) => (
 
           <option
             value={location.id}
@@ -31,9 +39,10 @@ function Sidebar (props) {
       </select>
       <ol>
         {/* render all list items based on the locations state*/}
-        {props.locations.map((location) => (
+        {this.props.locations.map((location) => (
            <ListElem
              key={location.id}
+             handleClick={this.props.handleClick}
              locations={location}
           />
          ))}
@@ -41,7 +50,7 @@ function Sidebar (props) {
 
     </aside>
   )
-
+ }
 }
 
 
