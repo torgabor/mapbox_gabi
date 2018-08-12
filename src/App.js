@@ -42,7 +42,7 @@ class App extends Component {
       }
     ],
 
-    activeObj: '0'
+    activeObj: 0
   };
 
   render() {
