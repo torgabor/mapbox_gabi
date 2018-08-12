@@ -5,7 +5,7 @@ import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 // import { Marker } from "react-mapbox-gl";
 import MBPopup from './Popup';
 import MBMarker from './Marker';
-import MBMarkerActive from './MarkerActive';
+// import MBMarkerActive from './MarkerActive';
 
 import './App.css';
 
@@ -24,7 +24,6 @@ class MapBox extends Component {
     const { locations } = this.props;
     const { activeObj } = this.props
 
-    const inactive = locations.filter(obj => obj.id !== activeObj)
     const active = locations.filter(obj => obj.id === activeObj)
 
     return (
@@ -44,18 +43,12 @@ class MapBox extends Component {
           } /*the map will center on the given coordinates*/
         >
         // RENDER ALL MARKERS AND POPUPS
-          {inactive.map((location) => (
+          {locations.map((location) => (
               <MBMarker
                 handleClick={this.props.handleClick}
                 key={location.id}
                 location={location}
-                 />
-          ))}
-          {active.map((location) => (
-              <MBMarkerActive
-                handleClick={this.props.handleClick}
-                key={location.id}
-                location={location}
+                activeObj={this.props.activeObj}
                  />
           ))}
           {active.map((location) => (

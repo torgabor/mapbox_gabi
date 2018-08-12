@@ -2,26 +2,48 @@ import React, { Component } from 'react';
 
 import ReactMapboxGl, { Marker } from 'react-mapbox-gl';
 import MarkerImg from './images/map-marker-alt-solid.svg';
+import MarkerImgActive from './images/map-marker-alt-solid-active.svg';
 
 
-function MBMarkerActive (props) {
+class MBMarker extends Component {
+
+  render(){
+
+    let isActive = false
+
+    if (this.props.location.id === this.props.activeObj) {
+      isActive = true
+    }
 
     return (
+
       <Marker
-        key={props.location.id}
-        onClick={props.handleClick}
-        value={props.location.id}
+        key={this.props.location.id}
+        onClick={this.props.handleClick}
+        value={this.props.location.id}
         className="marker"
-        coordinates={props.location.lngLat}
+        coordinates={this.props.location.lngLat}
         anchor="bottom"
       >
+      {isActive ? (
         <img
-         alt={props.location.place}
-         id={props.location.id}
+         alt={this.props.location.place}
+         id={this.props.location.id}
+         src={MarkerImgActive} />
+      ) : (
+        <img
+         alt={this.props.location.place}
+         id={this.props.location.id}
          src={MarkerImg} />
+      )}
+
       </Marker>
+
+
     );
+
+  }
 
 }
 
-export default MBMarkerActive;
+export default MBMarker;
