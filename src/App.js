@@ -42,8 +42,13 @@ class App extends Component {
       }
     ],
 
-    activeObj: 0
+    activeObj: 3
   };
+
+  handleClick = (e) => {
+    const id = Number(e.target.id)
+    this.setState({activeObj: id})
+  }
 
   render() {
     return (
@@ -54,10 +59,14 @@ class App extends Component {
         <main className="main">
           <Sidebar
             locations={this.state.locations}
-            activeObj={this.state.activeObj} />
+            activeObj={this.state.activeObj}
+            handleClick={this.handleClick}
+            />
           <MapBox
             locations={this.state.locations}
-            activeObj={this.state.activeObj} />
+            activeObj={this.state.activeObj}
+            handleClick={this.handleClick}
+            />
         </main>
       </div>
     );

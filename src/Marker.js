@@ -4,18 +4,23 @@ import ReactMapboxGl, { Marker } from 'react-mapbox-gl';
 import MarkerImg from './images/map-marker-alt-solid.svg';
 
 
-function MBMarker(props) {
+function MBMarkerActive (props) {
 
     return (
       <Marker
+        key={props.location.id}
+        onClick={props.handleClick}
+        value={props.location.id}
         className="marker"
-        coordinates={props.coordinates}
+        coordinates={props.location.lngLat}
         anchor="bottom"
       >
-        <img src={MarkerImg} />
+        <img
+         id={props.location.id}
+         src={MarkerImg} />
       </Marker>
     );
 
 }
 
-export default MBMarker;
+export default MBMarkerActive;

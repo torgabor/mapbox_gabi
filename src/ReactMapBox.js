@@ -51,13 +51,17 @@ class MapBox extends Component {
           ))}
           {inactive.map((location) => (
               <MBMarker
+                handleClick={this.props.handleClick}
                 key={location.id}
-                coordinates={location.lngLat} />
+                location={location}
+                 />
           ))}
           {active.map((location) => (
               <MBMarkerActive
+                handleClick={this.props.handleClick}
                 key={location.id}
-                coordinates={location.lngLat} />
+                location={location}
+                 />
           ))}
 
 
