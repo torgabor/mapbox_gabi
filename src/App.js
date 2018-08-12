@@ -56,7 +56,7 @@ class App extends Component {
     const value = e.target.value
     this.setState({activeObj: value})
     const filteredObj = this.state.locations[value]
-    this.setState({filteredObj: filteredObj})
+    this.setState({filteredObj: [filteredObj]})
   }
 
   removePopup = () => {
@@ -80,6 +80,7 @@ class App extends Component {
           <MapBox
             locations={this.state.locations}
             activeObj={this.state.activeObj}
+            filteredObj={this.state.filteredObj}
             handleClick={this.handleClick}
             removePopup={this.removePopup}
             />

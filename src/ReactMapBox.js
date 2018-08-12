@@ -23,6 +23,13 @@ class MapBox extends Component {
 
     const { locations } = this.props;
     const { activeObj } = this.props
+    const { filteredObj } = this.props
+
+    let isFiltered = false
+    if (filteredObj.length > 0) {
+      isFiltered = true
+    }
+
 
     const active = locations.filter(obj => obj.id === activeObj)
 
@@ -43,14 +50,27 @@ class MapBox extends Component {
           } /*the map will center on the given coordinates*/
         >
         // RENDER ALL MARKERS AND POPUPS
-          {locations.map((location) => (
+          {isFiltered ? (
+
+            filteredObj.map((location) => (
               <MBMarker
                 handleClick={this.props.handleClick}
                 key={location.id}
                 location={location}
                 activeObj={this.props.activeObj}
                  />
-          ))}
+               ))
+               ) : (
+                 locations.map((location) => (
+                   <MBMarker
+                     handleClick={this.props.handleClick}
+                     key={location.id}
+                     location={location}
+                     activeObj={this.props.activeObj}
+                      />
+                  ))
+               )
+          }
           {active.map((location) => (
             <MBPopup
               removePopup={this.props.removePopup}
