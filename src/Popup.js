@@ -6,6 +6,8 @@ function MBPopup (props) {
 
     return (
       <Popup
+        className="popup"
+        onClick={props.removePopup}
         coordinates={props.locations.lngLat}
         offset={{
           'bottom-left': [12, -38],

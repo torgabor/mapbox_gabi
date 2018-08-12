@@ -44,11 +44,6 @@ class MapBox extends Component {
           } /*the map will center on the given coordinates*/
         >
         // RENDER ALL MARKERS AND POPUPS
-          {active.map((location) => (
-            <MBPopup
-              key={location.id}
-              locations={location} />
-          ))}
           {inactive.map((location) => (
               <MBMarker
                 handleClick={this.props.handleClick}
@@ -63,7 +58,12 @@ class MapBox extends Component {
                 location={location}
                  />
           ))}
-
+          {active.map((location) => (
+            <MBPopup
+              removePopup={this.props.removePopup}
+              key={location.id}
+              locations={location} />
+          ))}
 
         </Map>
       </section>

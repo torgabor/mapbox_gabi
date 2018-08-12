@@ -16,6 +16,7 @@ function MBMarkerActive (props) {
         anchor="bottom"
       >
         <img
+         alt={props.location.place}
          id={props.location.id}
          src={MarkerImg} />
       </Marker>

@@ -59,3 +59,7 @@ body {
   cursor: pointer;
   width: 35px;
 }
+
+.popup {
+  cursor: pointer;
+}

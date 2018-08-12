@@ -42,12 +42,16 @@ class App extends Component {
       }
     ],
 
-    activeObj: 3
+    activeObj: ''
   };
 
   handleClick = (e) => {
     const id = Number(e.target.id)
     this.setState({activeObj: id})
+  }
+
+  removePopup = () => {
+    this.setState({activeObj: ''})
   }
 
   render() {
@@ -66,6 +70,7 @@ class App extends Component {
             locations={this.state.locations}
             activeObj={this.state.activeObj}
             handleClick={this.handleClick}
+            removePopup={this.removePopup}
             />
         </main>
       </div>
