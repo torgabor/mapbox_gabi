@@ -8,7 +8,6 @@ function ListElem (props) {
     return (
             <li
               key={props.locations.id}
-              id={props.locations.id}
             >
               {props.locations.place}
             </li>

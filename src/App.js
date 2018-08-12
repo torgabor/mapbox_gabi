@@ -46,8 +46,8 @@ class App extends Component {
   };
 
   handleClick = (e) => {
-    const id = Number(e.target.id)
-    this.setState({activeObj: id})
+    const value = Number(e.target.id)
+    this.setState({activeObj: value})
   }
 
   handleChange= (e) => {

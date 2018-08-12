@@ -24,7 +24,6 @@ function Sidebar (props) {
           <option
             value={location.id}
             key={location.id}
-            id={location.id}
           >
             {location.place}
           </option>
