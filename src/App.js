@@ -11,31 +11,31 @@ class App extends Component {
   state = {
     locations: [
       {
-        id: 0,
+        id: '0',
         place: 'Déli Pályaudvar',
         address: 'Budapest',
         lngLat: [19.025, 47.499]
       },
       {
-        id: 1,
+        id: '1',
         place: 'Millenaris Park',
         address: 'Budapest',
         lngLat: [19.028, 47.511]
       },
       {
-        id: 2,
+        id: '2',
         place: 'MOM Park',
         address: 'Budapest',
         lngLat: [19.026, 47.508]
       },
       {
-        id: 3,
+        id: '3',
         place: 'Mammut Shopping Centre',
         address: '2-6 Lövőház Street, Budapest, 1024',
         lngLat: [19.028, 47.515]
       },
       {
-        id: 4,
+        id: '4',
         place: 'Moholy-Nagy University of Art and Design',
         address: 'Budapest',
         lngLat: [18.9898, 47.5171]
@@ -46,12 +46,12 @@ class App extends Component {
   };
 
   handleClick = (e) => {
-    const value = Number(e.target.id)
+    const value =e.target.id
     this.setState({activeObj: value})
   }
 
   handleChange= (e) => {
-    const value = Number(e.target.value)
+    const value = e.target.value
     this.setState({activeObj: value})
   }
 

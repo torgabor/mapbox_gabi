@@ -33,6 +33,7 @@ function Sidebar (props) {
         {/* render all list items based on the locations state*/}
         {props.locations.map((location) => (
            <ListElem
+             key={location.id}
              locations={location}
           />
          ))}
