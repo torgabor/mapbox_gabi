@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Sidebar from './Sidebar_';
+import Sidebar from './Sidebar';
 import MapBox from './ReactMapBox';
 import './App.css';
 

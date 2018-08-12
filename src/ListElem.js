@@ -9,7 +9,6 @@ function ListElem (props) {
             <li
               key={props.locations.id}
               id={props.locations.id}
-              onChange={props.handleChange}
             >
               {props.locations.place}
             </li>
