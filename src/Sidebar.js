@@ -12,6 +12,12 @@ class Sidebar extends Component {
 
     const { locations } = this.props;
     const { activeObj } = this.props
+    const { filteredObj } = this.props
+
+    let isFiltered = false
+    if (filteredObj.length > 0) {
+      isFiltered = true
+    }
 
   return (
 
@@ -43,18 +49,28 @@ class Sidebar extends Component {
          Reset Filter
       </button>
       <ol>
-        {/* render all list items based on the locations state*/}
-        {this.props.locations.map((location) => (
+        {isFiltered ? (
+          filteredObj.map((location) => (
+            <ListElem
+              key={location.id}
+              handleClick={this.props.handleClick}
+              activeObj={this.props.activeObj}
+              locations={location}
+            />
+          ))
+        ) : (
+         locations.map((location) => (
            <ListElem
              key={location.id}
              handleClick={this.props.handleClick}
              activeObj={this.props.activeObj}
              locations={location}
           />
-         ))}
+        )))
+       }
       </ol>
-
     </aside>
+
   )
  }
 }

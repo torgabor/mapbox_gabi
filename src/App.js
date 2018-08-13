@@ -84,6 +84,7 @@ class App extends Component {
           <Sidebar
             locations={this.state.locations}
             activeObj={this.state.activeObj}
+            filteredObj={this.state.filteredObj}
             handleChange={this.handleChange}
             handleClick={this.handleClick}
             resetFilter={this.resetFilter}
