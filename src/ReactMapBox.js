@@ -1,37 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // React wrapper for mapbox-gl-js
-import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
-// import { Marker } from "react-mapbox-gl";
-import MBPopup from './Popup';
-import MBMarker from './Marker';
-// import MBMarkerActive from './MarkerActive';
+import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
 
-import './App.css';
+import MBPopup from "./Popup";
+import MBMarker from "./Marker";
+
+import "./App.css";
+
 
 const Map = ReactMapboxGl({
   accessToken:
-    'pk.eyJ1IjoiZ2FicmllbGxhaHUiLCJhIjoiY2praXNlaWkwMDRtazNsa2ZzdmRyZTViayJ9.vk8q9Nba8t3wx0xP1rml0g'
+    "pk.eyJ1IjoiZ2FicmllbGxhaHUiLCJhIjoiY2praXNlaWkwMDRtazNsa2ZzdmRyZTViayJ9.vk8q9Nba8t3wx0xP1rml0g"
 });
 
-
-
 class MapBox extends Component {
-
-
   render() {
 
     const { locations } = this.props;
-    const { activeObj } = this.props
-    const { filteredObj } = this.props
+    const { activeObj } = this.props;
+    const { filteredObj } = this.props;
 
-    let isFiltered = false
+    // conditional rendering of the markers
+    // more than one marker gets only rendered when no filtering is applied
+
+    let isFiltered = false;
     if (filteredObj.length > 0) {
-      isFiltered = true
+      isFiltered = true;
     }
 
-
-    const active = locations.filter(obj => obj.id === activeObj)
+    const active = locations.filter(obj => obj.id === activeObj);
 
     return (
       <section className="map-container">
@@ -40,8 +38,8 @@ class MapBox extends Component {
           id="map"
           style="mapbox://styles/mapbox/streets-v10"
           containerStyle={{
-            height: '100%',
-            width: '100%'
+            height: "100%",
+            width: "100%"
           }}
           center={[19.013, 47.49]} /*starting position of the map*/
           zoom={[13.5]} /*starting zoom of the map*/
@@ -49,35 +47,32 @@ class MapBox extends Component {
             [18.934, 47.513][(19.102, 47.469)]
           } /*the map will center on the given coordinates*/
         >
-        // RENDER ALL MARKERS AND POPUPS
-          {isFiltered ? (
-
-            filteredObj.map((location) => (
-              <MBMarker
-                handleClick={this.props.handleClick}
-                key={location.id}
-                location={location}
-                activeObj={this.props.activeObj}
-                 />
-               ))
-               ) : (
-                 locations.map((location) => (
-                   <MBMarker
-                     handleClick={this.props.handleClick}
-                     key={location.id}
-                     location={location}
-                     activeObj={this.props.activeObj}
-                      />
-                  ))
-               )
-          }
-          {active.map((location) => (
+        // conditional rendering of the markers
+        // more than one marker gets only rendered when no filtering is applied
+          {isFiltered
+            ? filteredObj.map(location => (
+                <MBMarker
+                  handleClick={this.props.handleClick}
+                  key={location.id}
+                  location={location}
+                  activeObj={this.props.activeObj}
+                />
+              ))
+            : locations.map(location => (
+                <MBMarker
+                  handleClick={this.props.handleClick}
+                  key={location.id}
+                  location={location}
+                  activeObj={this.props.activeObj}
+                />
+              ))}
+          {active.map(location => (
             <MBPopup
               removePopup={this.props.removePopup}
               key={location.id}
-              locations={location} />
+              locations={location}
+            />
           ))}
-
         </Map>
       </section>
     );
