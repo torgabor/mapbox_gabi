@@ -13,20 +13,18 @@ class Sidebar extends Component {
     const { locations } = this.props;
     const { activeObj } = this.props
 
-    const inactive = locations.filter(obj => obj.id !== activeObj)
-    const active = locations.filter(obj => obj.id === activeObj)
-
   return (
 
     <aside className="sidebar">
 
+      <label for="location-select">Filter locations</label>
       <select
+        id="location-select"
+        name="location-selector"
         onChange={this.props.handleChange}
         value={'selector'}
-        label='location-selector'
-
       >
-        <option value=''>Select a location</option>
+        <option value="" selected>Select an option</option>
         {this.props.locations.map((location) => (
 
           <option
@@ -37,6 +35,13 @@ class Sidebar extends Component {
           </option>
        ))}
       </select>
+      <button
+         name="reset"
+         value="reset"
+         onClick={this.props.resetFilter}
+      >
+         Reset Filter
+      </button>
       <ol>
         {/* render all list items based on the locations state*/}
         {this.props.locations.map((location) => (

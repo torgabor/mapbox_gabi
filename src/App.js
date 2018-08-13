@@ -54,15 +54,25 @@ class App extends Component {
 
   handleChange= (e) => {
     const value = e.target.value
-    this.setState({activeObj: value})
     const filteredObj = this.state.locations[value]
-    this.setState({filteredObj: [filteredObj]})
+    if(value ==='') {
+      this.setState({activeObj: ''})
+      this.setState({filteredObj: []})
+    } else {
+      this.setState({activeObj: value})
+      this.setState({filteredObj: [filteredObj]})
+    }
+  }
+
+  resetFilter = (e) => {
+    this.setState({filteredObj: []})
   }
 
   removePopup = () => {
     this.setState({activeObj: ''})
     this.setState({filteredObj: []})
   }
+
 
   render() {
     return (
@@ -76,6 +86,7 @@ class App extends Component {
             activeObj={this.state.activeObj}
             handleChange={this.handleChange}
             handleClick={this.handleClick}
+            resetFilter={this.resetFilter}
             />
           <MapBox
             locations={this.state.locations}
