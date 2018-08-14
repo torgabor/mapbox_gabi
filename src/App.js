@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import MapBox from "./ReactMapBox";
 import "./App.css";
 
+
 class App extends Component {
   // locations: an array of location objects, that is passed down to the Sidebar and MapBox Components
   // activeObj: the currently active location object
@@ -43,8 +44,9 @@ class App extends Component {
     ],
 
     activeObj: "",
-    filteredObj: []
-  };
+    filteredObj: [],
+  };s
+
 
   //function applied to markers that sets the id for the active location object
   //the markers can only be activated, when no filtering is applied
@@ -91,6 +93,7 @@ class App extends Component {
             handleChange={this.handleChange}
             handleClick={this.handleClick}
             resetFilter={this.resetFilter}
+            pictures={this.state.pictures}
           />
           <MapBox
             locations={this.state.locations}

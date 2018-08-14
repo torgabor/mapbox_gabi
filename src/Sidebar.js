@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import ListElem from "./ListElem";
+import Image from './Image'
 
 import "./App.css";
 
@@ -18,6 +19,7 @@ class Sidebar extends Component {
 
     return (
       <aside className="sidebar">
+        <Image pictures = {this.props.pictures} />
         <label for="location-select">Filter locations</label>
         <select
           id="location-select"

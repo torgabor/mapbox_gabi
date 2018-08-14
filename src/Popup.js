@@ -2,22 +2,31 @@ import React, { Component } from "react";
 
 import ReactMapboxGl, { Popup } from "react-mapbox-gl";
 
-function MBPopup(props) {
+
+class MBPopup extends Component{
+
+
+  render() {
+
+
   return (
+    <div>
     <Popup
       className="popup"
-      onClick={props.removePopup}
-      coordinates={props.locations.lngLat}
+      onClick={this.props.removePopup}
+      coordinates={this.props.locations.lngLat}
       offset={{
         "bottom-left": [12, -38],
         "bottom": [0, -58],
         "bottom-right": [-12, -38]
       }}
     >
-      <h1>{props.locations.place}</h1>
-      <p>{props.locations.address}</p>
+      <h1>{this.props.locations.place}</h1>
+      <p>{this.props.locations.address}</p>
     </Popup>
+    </div>
   );
+}
 }
 
 export default MBPopup;
