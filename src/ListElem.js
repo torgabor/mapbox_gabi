@@ -13,7 +13,8 @@ class ListElem extends Component {
     }
 
     return (
-      <div>
+      <ul
+        className="menu">
         {isActive ? (
           <li
             className="active-li"
@@ -33,7 +34,7 @@ class ListElem extends Component {
             {this.props.locations.place}
           </li>
         )}
-      </div>
+      </ul>
     );
   }
 }

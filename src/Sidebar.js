@@ -20,26 +20,35 @@ class Sidebar extends Component {
     return (
       <aside className="sidebar">
         <Image pictures = {this.props.pictures} />
-        <label for="location-select">Filter locations</label>
-        <select
-          id="location-select"
-          name="location-selector"
-          onChange={this.props.handleChange}
-          value={"selector"}
-        >
-          <option value="" selected>
-            Select an option
-          </option>
-          {this.props.locations.map(location => (
-            <option value={location.id} key={location.id}>
-              {location.place}
+        <section
+          className='location-selector'>
+          <label for="location-select">Filter locations</label>
+          <select
+            id="location-select"
+            name="location-selector"
+            onChange={this.props.handleChange}
+            value={"selector"}
+          >
+            <option value="" selected>
+              Select an option
             </option>
-          ))}
-        </select>
-        <button name="reset" value="reset" onClick={this.props.resetFilter}>
+            {this.props.locations.map(location => (
+              <option value={location.id} key={location.id}>
+                {location.place}
+              </option>
+            ))}
+          </select>
+        <button
+           className="reset"
+           type="reset"
+           name="reset"
+           value="reset"
+           onClick={this.props.resetFilter}>
           Reset Filter
         </button>
-        <ol>
+        </section>
+        <section
+          className="locations">
           {isFiltered
             ? filteredObj.map(location => (
                 <ListElem
@@ -57,7 +66,7 @@ class Sidebar extends Component {
                   locations={location}
                 />
               ))}
-        </ol>
+        </section>
       </aside>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 // Unsplash API
 const API =
-  "https://api.unsplash.com/photos/search?client_id=dddf912b3e4b9693384e1752b4aafb1311290a136c54a184eda7f717a5724b18&query=gourmet/900x600";
+  "https://api.unsplash.com/photos/search?client_id=dddf912b3e4b9693384e1752b4aafb1311290a136c54a184eda7f717a5724b18&query=gourmet/400x300";
 
 
 class Image extends Component {
@@ -54,16 +54,20 @@ class Image extends Component {
 
         {isErrorFree ? (
           randomImg.map(image => (
-            <figure>
+            <figure
+              className="appetizer-img">
+              <figcaption
+                className="appetizer-owner">
+                  Photo by {image.user.name}
+              </figcaption>
               <a href={image.urls.regular}>
                 <img
                   key={image.id}
                   className="unpsplash-img"
-                  src={image.urls.regular}
+                  src={image.urls.small}
                   alt={image.description}
                 />
               </a>
-              <figcaption>Photo by {image.user.name}</figcaption>
             </figure>
           ))
         ) : (
@@ -76,7 +80,7 @@ class Image extends Component {
           className= "credentials">
           Powered by
           <a href="https://unsplash.com/">
-            Unsplash
+             Unsplash
           </a>
         </p>
 
