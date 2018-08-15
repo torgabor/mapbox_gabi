@@ -1,45 +1,83 @@
 import React, { Component } from "react";
 
+// Unsplash API
+const API =
+  "https://api.unsplash.com/photos/search?client_id=dddf912b3e4b9693384e1752b4aafb1311290a136c54a184eda7f717a5724b18&query=gourmet/900x600";
 
-const API = 'https://api.unsplash.com/photos/?client_id=dddf912b3e4b9693384e1752b4aafb1311290a136c54a184eda7f717a5724b18';
-const DEFAULT_QUERY = 'budapest';
 
 class Image extends Component {
 
   state = {
-    images: [],
+    images: []
   };
 
-
   componentDidMount() {
-
+    //get food images from Unsplash, and set the state
     fetch(API)
-        .then(response => response.json())
-        .then(data => this.setState({images: data}))
-        .catch(error => console.log(error))
+      .then(response => response.json())
+      .then(data => this.setState({ images: data }))
+      .catch(error => console.log(error));
+  }
+
+  //funtcion that generates a random value
+  getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+  }
+
+
+  render() {
+
+    const { images } = this.state
+    //get a random food image from the state
+    const randomIndex = this.getRandomIntInclusive(1, 9)
+    const randomImg = images.slice(randomIndex - 1, randomIndex)
+
+    //error handling, in case there are no images to render
+    let isErrorFree = false;
+    if (randomImg.length > 0) {
+      isErrorFree = true;
     }
 
+    return (
+      <article className="appetizer">
+        <h2
+          className="appetizer-title">
+          Daily appetizer
+        </h2>
 
-  render(){
+        {isErrorFree ? (
+          randomImg.map(image => (
+            <figure>
+              <a href={image.urls.regular}>
+                <img
+                  key={image.id}
+                  className="unpsplash-img"
+                  src={image.urls.regular}
+                  alt={image.description}
+                />
+              </a>
+              <figcaption>Photo by {image.user.name}</figcaption>
+            </figure>
+          ))
+        ) : (
+          <p className="error">
+            Sorry, we could not download this image for you.
+          </p>
+        )}
 
-  const { images } = this.state
+        <p
+          className= "credentials">
+          Powered by
+          <a href="https://unsplash.com/">
+            Unsplash
+          </a>
+        </p>
 
-    return(
-
-      <section>
-      {images.map(images => (
-        <figure>
-          <img
-            key={images.id}
-            className="unpsplash-img"
-            src={images.urls.small}
-            alt="Unsplash picture of Budapest"
-          />
-          <figcaption>Budapest by {images.user.name}</figcaption>
-        </figure>))}
-      </section>
-    )
+      </article>
+    );
   }
 }
 
-export default Image
+export default Image;
