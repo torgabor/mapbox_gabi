@@ -41,8 +41,8 @@ class MapBox extends Component {
             height: "100%",
             width: "100%"
           }}
-          center={[19.013, 47.49]} /*starting position of the map*/
-          zoom={[13.5]} /*starting zoom of the map*/
+          center={[19.04, 47.475]} /*starting position of the map*/
+          zoom={[13]} /*starting zoom of the map*/
           fitBounds={
             [18.934, 47.513][(19.102, 47.469)]
           } /*the map will center on the given coordinates*/
@@ -52,24 +52,25 @@ class MapBox extends Component {
           {isFiltered
             ? filteredObj.map(location => (
                 <MBMarker
-                  handleClick={this.props.handleClick}
                   key={location.id}
+                  handleClick={this.props.handleClick}
                   location={location}
                   activeObj={this.props.activeObj}
                 />
               ))
             : locations.map(location => (
                 <MBMarker
-                  handleClick={this.props.handleClick}
                   key={location.id}
+                  onClick={this.props.handleClick}
+                  handleClick={this.props.handleClick}
                   location={location}
                   activeObj={this.props.activeObj}
                 />
               ))}
           {active.map(location => (
             <MBPopup
-              removePopup={this.props.removePopup}
               key={location.id}
+              removePopup={this.props.removePopup}
               locations={location}
             />
           ))}

@@ -4,7 +4,7 @@ import "./App.css";
 
 class ListElem extends Component {
   render() {
-    
+
     //conditional rendering of the sidebar list items
     //the condition matches the rendered location object's id with the currently active object in the state of App.js
     let isActive = false;

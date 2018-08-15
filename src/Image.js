@@ -8,7 +8,8 @@ const API =
 class Image extends Component {
 
   state = {
-    images: []
+    images: [],
+    randomIndex: ''
   };
 
   componentDidMount() {
@@ -17,6 +18,9 @@ class Image extends Component {
       .then(response => response.json())
       .then(data => this.setState({ images: data }))
       .catch(error => console.log(error));
+
+    const randomIndex = this.getRandomIntInclusive(1, 9)
+    this.setState({randomIndex})
   }
 
   //funtcion that generates a random value
@@ -30,8 +34,9 @@ class Image extends Component {
   render() {
 
     const { images } = this.state
+    const { randomIndex } = this.state
     //get a random food image from the state
-    const randomIndex = this.getRandomIntInclusive(1, 9)
+
     const randomImg = images.slice(randomIndex - 1, randomIndex)
 
     //error handling, in case there are no images to render

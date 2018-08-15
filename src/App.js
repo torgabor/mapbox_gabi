@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Sidebar from "./Sidebar";
 import MapBox from "./ReactMapBox";
+
 import "./App.css";
 
 
@@ -13,44 +14,45 @@ class App extends Component {
     locations: [
       {
         id: "0",
-        place: "Déli Pályaudvar",
-        address: "Budapest",
-        lngLat: [19.025, 47.499]
+        place: "Nika Restaurant",
+        address: "Budapest, Kossuth Lajos u. 7.",
+        lngLat: [19.058298, 47.493740]
       },
       {
         id: "1",
-        place: "Millenaris Park",
-        address: "Budapest",
-        lngLat: [19.028, 47.511]
+        place: "Mandragora Restaurant",
+        address: "Budapest, Kacsa utca",
+        lngLat: [19.034505, 47.509906]
       },
       {
         id: "2",
-        place: "MOM Park",
-        address: "Budapest",
-        lngLat: [19.026, 47.508]
+        place: "Marangona Gastro Point",
+        address: "Budapest, Bimbó út 2.",
+        lngLat: [19.029968, 47.511981]
       },
       {
         id: "3",
-        place: "Mammut Shopping Centre",
-        address: "2-6 Lövőház Street, Budapest, 1024",
-        lngLat: [19.028, 47.515]
+        place: "Búsuló Juhász Restaurant",
+        address: "Budapest, Kelenhegyi út 58.",
+        lngLat: [19.040212, 47.485351]
       },
       {
         id: "4",
-        place: "Moholy-Nagy University of Art and Design",
-        address: "Budapest",
-        lngLat: [18.9898, 47.5171]
+        place: "Vakvarjú Restaurant",
+        address: "Budapest, Paulay Ede u. 7.",
+        lngLat: [19.055999, 47.499504]
       }
     ],
 
     activeObj: "",
     filteredObj: [],
-  };s
+  };
 
 
   //function applied to markers that sets the id for the active location object
   //the markers can only be activated, when no filtering is applied
   handleClick = e => {
+
     const value = e.target.id;
     if (this.state.filteredObj.length === 0) {
       this.setState({ activeObj: value });
@@ -87,6 +89,7 @@ class App extends Component {
         </header>
         <main className="main">
           <Sidebar
+            key="sidebar"
             locations={this.state.locations}
             activeObj={this.state.activeObj}
             filteredObj={this.state.filteredObj}
@@ -96,6 +99,7 @@ class App extends Component {
             pictures={this.state.pictures}
           />
           <MapBox
+            key="mapbox"
             locations={this.state.locations}
             activeObj={this.state.activeObj}
             filteredObj={this.state.filteredObj}
