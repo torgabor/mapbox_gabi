@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 import ListElem from "./ListElem";
-import Image from './Image'
+import Image from "./Image";
+import Filter from "./LocationFilter";
 
 import "./App.css";
 
@@ -20,33 +21,14 @@ class Sidebar extends Component {
     return (
       <aside className="sidebar">
         <Image pictures = {this.props.pictures} />
-        <section
-          className='location-selector'>
-          <label for="location-select">Filter locations</label>
-          <select
-            id="location-select"
-            name="location-selector"
-            onChange={this.props.handleChange}
-            value={"selector"}
-          >
-            <option value="" selected>
-              Select an option
-            </option>
-            {this.props.locations.map(location => (
-              <option value={location.id} key={location.id}>
-                {location.place}
-              </option>
-            ))}
-          </select>
-        <button
-           className="reset"
-           type="reset"
-           name="reset"
-           value="reset"
-           onClick={this.props.resetFilter}>
-          Reset Filter
-        </button>
-        </section>
+
+        <Filter
+          locations={this.props.locations}
+          handleChange={this.props.handleChange}
+          handleClick={this.props.handleClick}
+          resetFilter={this.props.resetFilter}
+        />
+
         <section
           className="locations">
           {isFiltered
