@@ -19,7 +19,7 @@ class Sidebar extends Component {
 
     return (
       <aside className="sidebar">
-        <Image pictures={this.props.pictures} />
+        <Image pictures={this.props.pictures} key="wine_img" />
 
         <Filter
           locations={this.props.locations}
