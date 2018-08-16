@@ -20,6 +20,7 @@ class Sidebar extends Component {
 
     return (
       <aside className="sidebar">
+
         <Image pictures = {this.props.pictures} />
 
         <Filter
@@ -30,24 +31,30 @@ class Sidebar extends Component {
         />
 
         <section
-          className="locations">
-          {isFiltered
-            ? filteredObj.map(location => (
-                <ListElem
-                  key={location.handleSele}
-                  handleClick={this.props.handleClick}
-                  activeObj={this.props.activeObj}
-                  locations={location}
-                />
-              ))
-            : locations.map(location => (
-                <ListElem
-                  key={location.handleSele}
-                  handleClick={this.props.handleClick}
-                  activeObj={this.props.activeObj}
-                  locations={location}
-                />
-              ))}
+          id="menu">
+          <ul
+            className="menu">
+
+              {isFiltered
+                ? filteredObj.map(location => (
+                    <ListElem
+                      key={location.handleSele}
+                      handleClick={this.props.handleClick}
+                      activeObj={this.props.activeObj}
+                      locations={location}
+                    />
+                  ))
+                : locations.map(location => (
+                    <ListElem
+                      key={location.handleSele}
+                      handleClick={this.props.handleClick}
+                      activeObj={this.props.activeObj}
+                      locations={location}
+                    />
+                  ))
+                }
+            </ul>
+
         </section>
       </aside>
     );

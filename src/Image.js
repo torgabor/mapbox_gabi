@@ -56,10 +56,7 @@ class Image extends Component {
           randomImg.map(image => (
             <figure
               className="appetizer-img">
-              <figcaption
-                className="appetizer-owner">
-                  Photo by {image.user.name}
-              </figcaption>
+
               <a href={image.urls.regular}>
                 <img
                   key={image.id}
@@ -68,6 +65,20 @@ class Image extends Component {
                   alt={image.description}
                 />
               </a>
+
+              <figcaption
+                className="appetizer-text">
+                <span>
+                  Photo by {image.user.name}
+                </span>
+                <span
+                  className= "credentials">
+                  Powered by
+                    <a href="https://unsplash.com/">
+                       Unsplash
+                    </a>
+                </span>
+              </figcaption>
             </figure>
           ))
         ) : (
@@ -76,13 +87,6 @@ class Image extends Component {
           </p>
         )}
 
-        <p
-          className= "credentials">
-          Powered by
-          <a href="https://unsplash.com/">
-             Unsplash
-          </a>
-        </p>
 
       </article>
     );

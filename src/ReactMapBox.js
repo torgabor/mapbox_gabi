@@ -41,8 +41,8 @@ class MapBox extends Component {
             height: "100%",
             width: "100%"
           }}
-          center={[19.04, 47.475]} /*starting position of the map*/
-          zoom={[13]} /*starting zoom of the map*/
+          center={[19.042, 47.496]} /*starting position of the map*/
+          zoom={[12]} /*starting zoom of the map*/
           fitBounds={
             [18.934, 47.513][(19.102, 47.469)]
           } /*the map will center on the given coordinates*/

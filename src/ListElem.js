@@ -13,9 +13,8 @@ class ListElem extends Component {
     }
 
     return (
-      <ul
-        className="menu">
-        {isActive ? (
+
+        isActive ? (
           <li
             className="active-li"
             key={this.props.locations.id}
@@ -33,8 +32,8 @@ class ListElem extends Component {
           >
             {this.props.locations.place}
           </li>
-        )}
-      </ul>
+        )
+
     );
   }
 }
