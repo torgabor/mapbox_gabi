@@ -1,18 +1,17 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Filter extends Component {
-
   render() {
     const { locations } = this.props;
 
     return (
       <section className="location-selector">
-        <label for="location-select">Filter locations</label>
+        <label htmlFor="location-select">Filter locations</label>
         <select
           id="location-select"
           name="location-selector"
           onChange={this.props.handleChange}
-          value={"selector"}
+          value={'selector'}
         >
           <option value="" selected>
             Select an option

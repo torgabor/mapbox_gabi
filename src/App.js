@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Sidebar from "./Sidebar";
-import MapBox from "./ReactMapBox";
+import Sidebar from './Sidebar';
+import MapBox from './ReactMapBox';
 
-import "./App.css";
-
+import './App.css';
 
 class App extends Component {
   // locations: an array of location objects, that is passed down to the Sidebar and MapBox Components
@@ -13,47 +12,52 @@ class App extends Component {
   state = {
     locations: [
       {
-        id: "0",
-        place: "Nika Restaurant",
-        address: "Budapest, Kossuth Lajos u. 7.",
-        lngLat: [19.058298, 47.493740]
+        id: '0',
+        place: 'Nika Restaurant',
+        address: 'Budapest, Kossuth Lajos u. 7.',
+        lngLat: [19.058298, 47.49374]
       },
       {
-        id: "1",
-        place: "Mandragora Restaurant",
-        address: "Budapest, Kacsa utca",
+        id: '1',
+        place: 'Mandragora Restaurant',
+        address: 'Budapest, Kacsa utca',
         lngLat: [19.034505, 47.509906]
       },
       {
-        id: "2",
-        place: "Marangona Gastro Point",
-        address: "Budapest, Bimbó út 2.",
+        id: '2',
+        place: 'Marangona Gastro Point',
+        address: 'Budapest, Bimbó út 2.',
         lngLat: [19.029968, 47.511981]
       },
       {
-        id: "3",
-        place: "Búsuló Juhász Restaurant",
-        address: "Budapest, Kelenhegyi út 58.",
+        id: '3',
+        place: 'Búsuló Juhász Restaurant',
+        address: 'Budapest, Kelenhegyi út 58.',
         lngLat: [19.040212, 47.485351]
       },
       {
-        id: "4",
-        place: "Vakvarjú Restaurant",
-        address: "Budapest, Paulay Ede u. 7.",
+        id: '4',
+        place: 'Vakvarjú Restaurant',
+        address: 'Budapest, Paulay Ede u. 7.',
         lngLat: [19.055999, 47.499504]
       }
     ],
 
-    activeObj: "",
-    filteredObj: [],
+    activeObj: '',
+    filteredObj: []
   };
-
 
   //function applied to markers that sets the id for the active location object
   //the markers can only be activated, when no filtering is applied
   handleClick = e => {
+    const value = e.target.elemId;
+    if (this.state.filteredObj.length === 0) {
+      this.setState({ activeObj: value });
+    }
+  };
 
-    const value = e.target.id;
+  handleClickWithId = (e, id) => {
+    const value = id;
     if (this.state.filteredObj.length === 0) {
       this.setState({ activeObj: value });
     }
@@ -77,7 +81,7 @@ class App extends Component {
   //closing the popup resets the active location
   removePopup = () => {
     if (this.state.filteredObj.length === 0) {
-      this.setState({ activeObj: "" });
+      this.setState({ activeObj: '' });
     }
   };
 
@@ -94,7 +98,7 @@ class App extends Component {
             activeObj={this.state.activeObj}
             filteredObj={this.state.filteredObj}
             handleChange={this.handleChange}
-            handleClick={this.handleClick}
+            handleClick={this.handleClickWithId}
             resetFilter={this.resetFilter}
             pictures={this.state.pictures}
           />

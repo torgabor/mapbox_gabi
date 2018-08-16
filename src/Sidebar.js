@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import ListElem from "./ListElem";
-import Image from "./Image";
-import Filter from "./LocationFilter";
+import ListElem from './ListElem';
+import Image from './Image';
+import Filter from './LocationFilter';
 
-import "./App.css";
-
+import './App.css';
 
 class Sidebar extends Component {
   render() {
@@ -20,8 +19,7 @@ class Sidebar extends Component {
 
     return (
       <aside className="sidebar">
-
-        <Image pictures = {this.props.pictures} />
+        <Image pictures={this.props.pictures} />
 
         <Filter
           locations={this.props.locations}
@@ -30,31 +28,28 @@ class Sidebar extends Component {
           resetFilter={this.props.resetFilter}
         />
 
-        <section
-          id="menu">
-          <ul
-            className="menu">
-
-              {isFiltered
-                ? filteredObj.map(location => (
-                    <ListElem
-                      key={location.handleSele}
-                      handleClick={this.props.handleClick}
-                      activeObj={this.props.activeObj}
-                      locations={location}
-                    />
-                  ))
-                : locations.map(location => (
-                    <ListElem
-                      key={location.handleSele}
-                      handleClick={this.props.handleClick}
-                      activeObj={this.props.activeObj}
-                      locations={location}
-                    />
-                  ))
-                }
-            </ul>
-
+        <section id="menu">
+          <ul className="menu">
+            {isFiltered
+              ? filteredObj.map(location => (
+                  <ListElem
+                    key={location.id}
+                    id={location.id}
+                    handleClick={this.props.handleClick}
+                    activeObj={this.props.activeObj}
+                    locations={location}
+                  />
+                ))
+              : locations.map(location => (
+                  <ListElem
+                    key={location.id}
+                    id={location.id}
+                    handleClick={this.props.handleClick}
+                    activeObj={this.props.activeObj}
+                    locations={location}
+                  />
+                ))}
+          </ul>
         </section>
       </aside>
     );
