@@ -13,7 +13,7 @@ class Filter extends Component {
           onChange={this.props.handleChange}
           value={'selector'}
         >
-          <option value="" selected>
+          <option value="" defaultValue>
             Select an option
           </option>
           {this.props.locations.map(location => (
